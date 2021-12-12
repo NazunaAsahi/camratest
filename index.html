@@ -10,13 +10,8 @@
         <input type="file" name="test" capture>
     </body>
     <script src="js/camera.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js').then(function(registration) {
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }).catch(function(err) {
-                console.log('ServiceWorker registration failed: ', err);
-            });
+        test(){
+        console.log("test");
         }
     </script>
 </html>
