@@ -8,10 +8,21 @@
 
     <body>
         <input type="file" name="test" capture>
+        <div class="message" style="white-space:pre;"></div>
     </body>
-    <script src="js/camera.js"></script>
-        test(){
-        console.log("test");
-        }
-    </script>
+<script>
+document.querySelector("input[type='file']").addEventListener("change" , function(e){
+  var msg = document.querySelector(".message");
+  var txt = "";
+  for(var i=0; i<e.target.files.length; i++){
+    txt += i+" : \n";
+    for(var j in e.target.files[i]){
+      txt += j +" : "+ e.target.files[i][j] +"\n";
+    }
+    txt += "\n";
+  }
+
+  msg.textContent += txt;
+});
+</script>
 </html>
